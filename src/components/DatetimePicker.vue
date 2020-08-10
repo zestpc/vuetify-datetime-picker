@@ -23,12 +23,12 @@
         <v-tabs fixed-tabs v-model="activeTab">
           <v-tab key="calendar">
             <slot name="dateIcon">
-              <v-icon>mdi-calendar</v-icon>
+              <v-icon>{{ date-picker-icon }}</v-icon>
             </slot>
           </v-tab>
           <v-tab key="timer" :disabled="dateSelected">
             <slot name="timeIcon">
-              <v-icon>mdi-clock-outline</v-icon>
+              <v-icon>{{ time-picker-icon }}</v-icon>
             </slot>
           </v-tab>
           <v-tab-item key="calendar">
@@ -116,6 +116,14 @@ export default {
     },
     timePickerProps: {
       type: Object
+    },
+    datePickerIcon: {
+      type: String,
+      default: 'mdi-calendar'
+    },
+    timePickerIcon: {
+      type: String,
+      default: 'mdi-clock-outline'
     }
   },
   data() {
